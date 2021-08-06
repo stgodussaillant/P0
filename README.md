@@ -45,7 +45,7 @@
 
 
 * ¿Cómo difiere del gráfico del profesor/ayudante?
-  * En el grafico del profesor la primera matriz no se demora tanto tiempo en ser calculada. Ademas, algunas matrices no se demoran tanto, pues siempre se mantienen tiempos mas o menos constantes, no como en el caso del profesor que hay algunas corridas en las que difiere mucho el tiempo.
+  * En el grafico del profesor la primera matriz no se demora tanto tiempo en ser calculada. Ademas, en mi caso, algunas matrices no se demoran tanto, pues siempre se mantienen tiempos mas o menos constantes, no como en el caso del profesor que hay algunas corridas en las que difiere mucho el tiempo.
 
 * ¿A qué se pueden deber las diferencias en cada corrida?
   * Se debe a que durante cada corrida se estan utilizando otros elementos del computador que tambien utilizan parte de la memoria, por lo que esto ultimo se ve reflejado en el tiempo que le demora al programa en calcular cada matriz
