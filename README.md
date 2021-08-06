@@ -39,6 +39,30 @@
 * Dirección IP (Externa, del ISP): 190.215.253.6
 * Proveedor internet: GTD Internet S.A.
 
+# Desempeño MATMUL
+
+![Redimiento A@B](https://user-images.githubusercontent.com/88340864/128451252-f09511fd-96f8-4b78-86ee-e2bca738b80b.png)
+
+
+* ¿Cómo difiere del gráfico del profesor/ayudante?
+  * En el grafico del profesor la primera matriz no se demora tanto tiempo en ser calculada. Ademas, algunas matrices no se demoran tanto, pues siempre se mantienen tiempos mas o menos constantes, no como en el caso del profesor que hay algunas corridas en las que difiere mucho el tiempo.
+
+* ¿A qué se pueden deber las diferencias en cada corrida?
+  * Se debe a que durante cada corrida se estan utilizando otros elementos del computador que tambien utilizan parte de la memoria, por lo que esto ultimo se ve reflejado en el tiempo que le demora al programa en calcular cada matriz
+
+* El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
+  * El del tiempo transucrrido no es lineal ya que el tiempo que demora en calcular cada matriz no es acumulado. En cambio el de la memoria (si bien no es acumulativo) si considera la memoria utilizada por las matrices anteriores, pues es un tamaño mayor.
+
+* ¿Qué versión de python está usando?
+  * 3.6.5
+
+* ¿Qué versión de numpy está usando?
+  * 1.19.3
+
+* Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen (screenshot) de su uso de procesador durante alguna corrida para confirmar. 
+  * Si, se estan usando 4 procesadores
+  ![Procesadores](https://user-images.githubusercontent.com/88340864/128451214-49431a5b-1ccb-4ae7-ac25-6d78eb66f81c.jpg)
+
 
 
 
