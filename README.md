@@ -112,4 +112,25 @@
 * Como se puede observar en las imagenes, invertir una matriz con numpy consume muchos mas recursos que con scipy. Ademas, el uso de la memoria en numpy es mas "inestable" mientras que en scipy se mantiene en valores similiares.
 
 
+# Desempeño SOLVE y EIGH
+
+* SOLVE
+  * En los distintos graficos se puede observar que la funcion solve requiere de mayor tiempo para resolver las matrices, mientras que la simple multiplicacion de la inversa por el vector de 1's no demora tanto como la funcion solve. Esto ocurre tanto en el dtype=single como en el dtype=double.
+  * Durante la ejecucion del programa con dtype=single, el tiempo que le toma a cada matriz realizar el solve es bastante menor que el que utiliza el dtype=double, pues para este ultimo el tiempo que le toma al dtype=double es el doble que para dtype=single.
+  * Ademas, durante la ejecucion de ambos dtypes se utilizan los 4 procesadores del computador, siendo en el caso del dtype=single que se utiliza en menor medida que en el caso del dtype=double.
+  * Tambien, hay que señalar que el uso de la memoria en el caso del dtype=double es mayor que en el caso del dtype=single, en el cual la memoria se mantiene en valores mas bajos.
+  * En base a lo anterior, claramente el algoritmo que utiliza un dtype=single es mejor, ya que demora menos tiempo en realizar el calculo de las matrices, ademas de utilizar menor memoria y los procesadores no se exigen mucho.
+  * Finalmente, la superioridad del dtype=single se puede deber a que este funciona con 32 bits y por lo tanto utiliza menor memoria que el dtype=double, el cual funciona con 64 bits, lo que se puede traducir en un mayor uso de la memoria y de los procesadores, lo cual tambien conlleva a un mayor tiempo de ejecucion del codigo.
+
+* EIGH
+  * Debido a que las matrices de tamaño 7500 y 10000 provocaban que la corrida demorara mas de 2 minutos, se eliminaron estos terminos, llegando solo a tamaños de matrices de N=5000.
+  * Ademas, cada caso se subdividio en dos casos, ovewrite_a=False y overwrite_=True. Cuando es caso False, se denota con un .1, mientras que cuando es True, con un .2. Por ejemplo, para el caso 2 con overwrite_a=False, el archivo corresponde al que sea 2.1, mientras que el 2.2 corresponde al caso 2 con overwrite_a=True.
+  * Tambien, como el argumento driver no era reconocido por el computador, se cambio por turbo, el cual si funciona con la version de scipy que esta instalada en el computador.
+  * Al igual que el caso de solve, cuando se ejecutaba el codigo con dtype=single, la memoria se mantenia en valores estables y no era utilizada en su totalidad. Cuando el dtype era igual a double, la memoria del computador tambien se mantenia en valores estables, pero esta utilizaba una mayor memoria, pues al trabajar con 64 bits este requiere de mayor memoria para ejecutar el codigo.
+  * Para el caso de los procesadores, la situacion era similar al caso del solve, con el dtype=single se utilizan los 4 procesadores, sin que ninguno llegue al limite. Para el caso del dtype=double, tambien se usaban los 4 procesadores, pero a diferencia del dtype=single, este si llegaba a utilizar toda la capacidad de los procesadores cuando se trabajaban tamaños de matrices mas grandes, pero el tiempo de ejecucion no se veia impactado por esto ultimo.
+  * Finalmente, a diferncia del solve, el dtype no influye en significativamente en el tiempo de ejecucion del codigo, donde si se nota la diferencia es en la memoria y en los procesadores, que si bien no llegan a utilizar todos los recursos, si se nota que el dtype=double requiere de mayores recursos para ejecutar el codigo.
+  * Para los graficos con la funcion eigh, estos comparan el caso cuando eigh usa valores por defecto (caso 1) y el caso corresponiente con driver (o turbo en este caso). Por ejemplo, un grafico compara el caso 1 con el caso 2.1 y 2.2, para poder ver y analizar el como se influye el overwrite_a en las distintas funciones.
+  * En los graficos se puede notar como no existe tanta diferencia entre los casos con overwrite_a=False y overwrite_a=True. Ademas, las mayores variaciones se presentan entre las matrices de tamaño 10 y 200, pero de igual forma aquellas variaciones de tiempo son menores a 0.1s, por lo que no es significativo.
+
+
 
