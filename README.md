@@ -155,5 +155,6 @@ def Laplaciana(N, t=double):                                    #Laplaciana disp
   
   ![Laplaciana llena](https://user-images.githubusercontent.com/88340864/131069339-0e491eab-9c1c-4657-a84b-6926c128e802.png)
 
+* Como se ve en el grafico de las matrices dispersas, para los tamaños de matrices 10.000x10.000 el tiempo de ensamblado no variaba mucho en comparacion con tiempos menores. Lo mismo pasaba con el tiempo de solucion. Debido a esto, es que se decidio agrandar el tamaño de las matrices para este caso, pues con esto se podia observar de mejor manera como variaba el tiempo de ensamblado y de solucion para las distintas matrices.
 
 
