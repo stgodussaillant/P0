@@ -144,7 +144,7 @@ def Laplaciana(N, t=double):            #Laplaciana llena
 ```
 * Para el caso con formato dispersa y tipo double, el codigo para ensamblar la matriz laplaciana fue:
 ```
-def Laplaciana(N, t=double):                                    #Laplaciana dispersa
+def Laplaciana(N, t=double):            #Laplaciana dispersa
     e = sparse.eye(N, dtype=t)-sparse.eye(N,N,1,dtype=t)
     return e+e.T
 ```
