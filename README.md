@@ -135,14 +135,14 @@
 
 # Matrices dispersas y complejidad computacional
 
-* Complejidad algoritmica de MATMUL
-  * El codigo para ensamblar la matriz laplaciana para el formato llena y tipo double es el que se muestra a continuacion:
+## Complejidad algoritmica de MATMUL
+* El codigo para ensamblar la matriz laplaciana para el formato llena y tipo double es el que se muestra a continuacion:
 ```
 def Laplaciana(N, t=double):            #Laplaciana llena
     e=np.eye(N)-np.eye(N,N,1)
     return t(e+e.T)
 ```
-  * Para el caso con formato dispersa y tipo double, el codigo para ensamblar la matriz laplaciana fue:
+* Para el caso con formato dispersa y tipo double, el codigo para ensamblar la matriz laplaciana fue:
 ```
 def Laplaciana(N, t=double):                                    #Laplaciana dispersa
     e = sparse.eye(N, dtype=t)-sparse.eye(N,N,1,dtype=t)
