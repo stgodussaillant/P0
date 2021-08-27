@@ -137,18 +137,17 @@
 
 * Complejidad algoritmica de MATMUL
   * El codigo para ensamblar la matriz laplaciana para el formato llena y tipo double es el que se muestra a continuacion:
-   ```
+```
 def Laplaciana(N, t=double):            #Laplaciana llena
     e=np.eye(N)-np.eye(N,N,1)
     return t(e+e.T)
-   ```
+```
    * Para el caso con formato dispersa y tipo double, el codigo para ensamblar la matriz laplaciana fue:
-   ```
+```
 def Laplaciana(N, t=double):                                    #Laplaciana dispersa
     e = sparse.eye(N, dtype=t)-sparse.eye(N,N,1,dtype=t)
     return e+e.T
-   ```
-
+```
   * En los graficos del formato disperso se puede observar que esta demora mucho menos que el formato lleno en ensamblar y en encontrar la solucion de MATMUL. Esto se debe a que la matriz dispersa no considera los valores de 0 dentro de su ensamblaje, y tampoco lo hace para solucionar MATMUL.
   * Esto provoca que este formato no utilize tantos recursos (y por lo tanto demore menos en procesar) como el formato lleno. Es por esto que con matrices dispersas se pueden procesar matrices de tamaños muy superiores, en comparacion a las matrices llenas, de hecho se pueden procesar matrices de hasta 10.000.000x10.000.000, mientras que las matrices llenas solo pueden procesar matrices de hasta 10.000x10.000
  
