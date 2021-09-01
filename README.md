@@ -164,6 +164,11 @@ def Laplaciana(N, t=double):            #Laplaciana dispersa
   * Para el caso de las matrices dispersas ocurre algo similar para ambos tiempos (ensamblaje y solucion), la complejidad se encuentra entre N y N^2 pero mas cercana a los valores de N.
   * El comportamiento de las matrices es similar para las dispersas y llenas, al comienzo presentan variacion, pero a medida que se agranda el tamaño de matrices estas tienden a estabilizar sus tiempos ensamblaje y solucion, por lo que el tamaño de las matrices si influye en el comportamiento que presentaran las matrices.
   * En general las corridas del programa son estables, salvo 1 o 2 corridas en las que los tiempos de los procesos se ve efectado. Estas diferencias en esas corridas puede encontrar su explicacion en que el computador esta ejecutando otros procesos los cuales pueden afectar el tiempo de la corrida en ciertos casos.
+  
+  ![Laplaciana solve llena](https://user-images.githubusercontent.com/88340864/131727305-b8d61be3-a2e5-4650-afde-00138cc99ab3.png)
+  
+  ![Laplaciana solve dispersa](https://user-images.githubusercontent.com/88340864/131727489-ae3adf65-f853-4009-b0a3-d68e509a062b.png)
+
   * El codigo de ensamblaje de las matrices laplacianas es igual al que se presenta en el punto anterior, tanto para matrices llenas como para matrices dispersas.
 
 ## Complejidad algoritmica de INV
@@ -173,5 +178,10 @@ def Laplaciana(N, t=double):            #Laplaciana dispersa
   * En el caso de las matrices llenas, el comportamiento es el esperado, presenta variabilidad en las primeras matrices, pero a medida que esta aumenta siguen valores mas estables. En cambio para las matrices dispersas, el comportamiento no es el esperado, ya que en primer lugar, las matrices mas pequeñas son las que mas demoran en ensamblar, y el tiempo de solucion (invertir matriz) tampoco es el esperado, ya que demora mucho, considerando que las matrices que se tratan no consideran los 0. Es por este ultimo punto que los tamaños de matrices utilizadas para las matrices dispersas es igual que para el caso de las matrices llenas (y no como en el caso de SOLVE y MATMUl, las cuales llegaban a tamaños de matrices mayores).
   * Las corridas para el tipo llena en general son bastante estables, presentando una pequeña variacion en el caso del ensamblaje y en el caso de la solucion una gran diferencia en una de las corridas, la cual se puede deber a los otros procesos que se estaban llevando a cabo mientras se ejecutaba el programa.
   * Finalmente, las corridas para las matrices dispersas presentan estabilidad en casi todas sus corridas de ensamblaje (con excepcion de 1 o 2 corridas), mientras que en el caso de las soluciones se presenta mucha inestabilidad al comienzo pero luego se va estabilizando las corridas.
+  
+  ![Laplaciana inv llena](https://user-images.githubusercontent.com/88340864/131727405-a7232318-59d3-462b-878b-da32ae86dae3.png)
+  
+  ![Laplaciana inv dispersa](https://user-images.githubusercontent.com/88340864/131727446-9e88d57c-fd4d-4b6c-a2c6-4848788f2e0d.png)
+  
   * El ensamblaje de las matrices dispersas y matrices llenas es igual a como se muestra en el punto "Complejidad algoritmica de MATMUL".
 
